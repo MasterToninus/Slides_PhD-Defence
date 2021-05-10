@@ -1,0 +1,281 @@
+%+----------------------------------------------------------------------------+
+%| SLIDES: 
+%| Chapter: Results of the paper with M. Zambon
+%| Author: Antonio miti
+%| Event: PHD preliminary Defence
+%+----------------------------------------------------------------------------+
+
+%- HandOut Flag -----------------------------------------------------------------------------------------
+\newif\ifHandout
+
+%- D0cum3nt ----------------------------------------------------------------------------------------------
+\documentclass[beamer,10pt]{standalone}   
+%\documentclass[beamer,10pt,handout]{standalone}  \Handouttrue  
+
+%- HandOut Flag -----------------------------------------------------------------------------------------
+\ifHandout
+	\setbeameroption{show notes} %print notes   
+\fi
+
+	
+%- Packages ----------------------------------------------------------------------------------------------
+\usepackage{custom-style}
+
+%--Beamer Style-----------------------------------------------------------------------------------------------
+\usetheme{toninus}
+
+
+
+
+
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+%- D0cum3nt ----------------------------------------------------------------------------------------------------------------------------------
+\begin{document}
+%------------------------------------------------------------------------------------------------
+
+
+%TITOLO DA AGGIORNARE
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+%\subsection{Commutative diagram with gauge transformations and HCMM}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{Compatibility between gauge transformations and comoment maps}
+	%
+	Consider $(M,\omega)$ \alert{symplectic mfd.}
+	\only<5-11>{ and \alert{\underline{prequantizable}} ($S^1$-bundle $P$, connection $\theta$)}
+	%
+	\begin{center}
+			\includestandalone[width=.8\textwidth]{Pictures/Frame_BigDiagram_symplectic}
+	\end{center}
+	%
+	\vspace{-2em}
+	\begin{minipage}[t][1.7cm][t]{\textwidth}
+	\begin{itemize}
+		\only<1-4>{
+			\item<2-> Given a Symp. mfd. $(M,\omega)$ there is a naturally associated Poisson algebra ...
+			\item<3-> .\alert<+>{... and also a Lie Algebroid}.
+			\item<4-> A Lie algebroid is a "controlled" $\infty$-dimensional Lie algebra;
+		}
+		\only<5-6>{
+			\item<5-> Prequantization Bundle $S^1\hookrightarrow P \to M$ with connection $\theta$,
+			\item<5-> "infinitesimal quantomorphisms" $Q(P,\theta):=\lbrace Y \in \mathfrak{X}(P)~|~ \mathcal{L}_Y \theta =0 \}$.
+		}
+		\only<7-11>{
+		\item<7-> Consider a deformed structure $\tilde{\omega}= \omega + d B$ with $B\in C^\infty(M)$;
+		\item<9-> There is a natural isomorphism in the Lie Alg.oids category,
+		\item<11-> Considering $\mathfrak{g}\circlearrowleft M$ preserving $\omega$ and $\tilde{\omega}$ ...
+		}
+		\item<12-> Neglect the prequantization...
+		\vspace{-1em} 
+			\begin{displaymath}
+				\begin{tikzcd}
+					\Psi~:&[-1em] C^{\infty}(M)_\omega \ar[r,"\Psi"]& \Gamma(TM\oplus \mathbb{R})_\omega
+					\\[-2em]
+					& f \ar[r,mapsto] & \binom{\mathscr{v}_f}{f}
+				\end{tikzcd}
+			\end{displaymath}
+	\end{itemize}
+	\end{minipage}
+	\vfill
+	\tcbset{colback=white,
+	colbacktitle=white,
+	colframe=red!70!black,
+	boxrule=1pt,
+	colupper=red!70!black,
+	arc=15pt,
+	}
+	\begin{minipage}[t][1.7cm][t]{\textwidth}
+	\only<6>{ 
+		\begin{tcolorbox}[enhanced,frame hidden,borderline={0.5pt}{0pt}{blue}]
+			\color{blue}{
+			The left square and right triangles commutes!
+			}
+		\end{tcolorbox}
+	}
+	\only<11>{
+		\begin{tcolorbox}[enhanced,frame hidden,borderline={0.5pt}{0pt}{blue}]
+			\color{blue}{
+			The left square and right triangle commute!
+			}
+		\end{tcolorbox}
+	}
+	\only<12>{
+		\vspace{-.75em}
+		\begin{tcolorbox}[enhanced,frame hidden,borderline={0.5pt}{0pt}{blue}]
+			\color{blue}{
+			The central pentagon commutes!
+			}
+		\end{tcolorbox}
+	\vfill
+		\vspace{-.75em}
+		\begin{center}
+		\tcbox[enhanced,frame hidden,borderline={0.5pt}{0pt}{red,dashed}]{	
+			\alert{
+			\faQuestionCircle \qquad
+				{What happens in the higher (n-plectic) case?}
+			\qquad \faQuestionCircle		
+			}
+		}
+		\end{center}
+	}
+	\end{minipage}
+	%
+\end{frame}
+\note[itemize]{
+	\item The horizontal embedding is  $f \mapsto (v_f,f)$;
+	\item Vertical maps are also known as \emph{Gauge transformations}
+	\item upshot: 
+	\begin{enumerate}
+		\item 
+	\end{enumerate}
+}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{Embedding observables $L_\infty$-algebra into Vinogradov $L_\infty$-algebra}
+	Consider now $\omega$ \alert{$n$-plectic}
+	\vfill
+	\begin{center}
+		\includestandalone[width=.8\textwidth]{Pictures/Frame_Embedding_Diagram_k-plectic_V1}
+	\end{center}
+	\vfill
+	\only<1-3>{
+	\begin{itemize}
+		\item<2-> Higher analogue of the Courant algebroid $\rightsquigarrow$ \alert{\emph{Vinogradov algebroid}}
+			\begin{displaymath}
+			E^n = \left(TM\oplus\bigwedge^{k-1}T^\ast M \right)
+			\end{displaymath}
+		\item<3->  Vin. alg.oids are $NQ$-manifolds ($L_\infty$-algebroids).
+		\\ Associated $L_\infty$-algebra on the graded vector space
+		\begin{displaymath}\label{eq:VSpace}
+			{\mathcal{V}^k} =
+			\begin{cases}
+				\mathfrak{X}(M)\oplus \Omega^{n-1}(M)  &\quad k=0,\\
+				\Omega^{n-1+k}(M) &\quad -n+1 \leq k < 0.
+			\end{cases}
+		\end{displaymath}
+	\end{itemize}
+	}
+
+
+	\only<4->{
+	\begin{thmblock}[Embedding of $L_\infty$-algebras  $\Psi:L_\infty(M,\omega)\hookrightarrow L_{\infty}(E^n,\omega)$\quad \cite{Miti2021}.]
+	\begin{itemize}[leftmargin=0pt]
+		\item[$\cdot$]<4-> 
+			consider the graded vector subspace $\mathcal{A}$
+			\begin{displaymath}
+			\mathclap{
+			{\mathcal{A}^k} =
+			\begin{cases}
+		\left.\left\lbrace
+		\binom{X}{\alpha}\in \mathfrak{X}(M)\oplus \Omega^{n-1}(M)
+		~ \right\vert ~
+		\iota_X \omega = -d \alpha\right\rbrace
+&\quad k=0,\\
+				\Omega^{n-1+k}(M) &\quad -n+1 \leq k < 0.
+			\end{cases}			
+			}
+			\end{displaymath}						
+		\item[$\cdot$]<5-> 
+			restrict the two $L_\infty$-structures to $\pi$ and $\mu$ on $\mathcal{A}$
+		\item[$\cdot$]<6->
+
+			$L_\infty(M,\omega) \cong 
+				(\mathcal{A},\pi) \color{blue}\cong\color{black}
+				(\mathcal{A},\mu) \hookrightarrow
+				L_\infty(E^n,\omega)$
+	\end{itemize}
+	\end{thmblock}
+	}
+	\only<6->{
+		\tikz[overlay,remember picture]
+		{
+			\node[rounded corners,
+                 fill=orange!1,draw=orange!30,anchor=base]            
+            	 (base) at ($(current page.east)-(2.25,4)$) [rotate=-0,text width=3cm,align=center] { \footnotesize{\color{red}{
+            	 Complete proof\\
+            	 \faWarning ~ up to $n\geq 4$! ~ \faWarning 
+            	 }}};
+		}			
+	}
+
+		
+
+\end{frame}
+\note{}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}{Compatibility with Gauge transformations}
+	Consider now $\omega$ \alert{n-plectic} \quad and \alert{$\tilde{\omega}=\omega + d B$}:
+	\vfill
+	%
+	\begin{center}
+		\includestandalone[width=.8\textwidth]{Pictures/Frame_Gauge_Diagram_k-plectic}
+	\end{center}	
+	%
+	\vfill
+	%
+	
+
+	\begin{itemize}
+	\only<1-3>{
+		\item<2-> Vinogradov alg.oids w.r.t cohomologous twisting closed forms are isomorphic.
+		\item<3-> Induced isomorphism at the level of $L_\infty$-algebras
+	}
+	\only<4->{
+		\item<4-> Consider a Lie algebra action $\mathfrak{g}\to \mathfrak{X}(M)$ admitting HCMM w.r.t $\omega$ and $\tilde{\omega}$
+	}
+	\end{itemize}
+
+	\vfill
+	\tcbset{colback=white,
+		colbacktitle=white,
+		colframe=blue!70!black,
+		boxrule=1pt,
+		colupper=blue!70!black,
+		arc=15pt,
+		}
+	\onslide<5->{
+	\begin{tcolorbox}[sidebyside,righthand width=.75\linewidth]
+		Thm: \cite{Miti2021}
+		\tcblower
+		\color{blue}
+The central square commutes. 
+			\\\emph{(On the nose, not "up to homotopies")}.
+	\end{tcolorbox}	
+		\tikz[overlay,remember picture]
+		{
+			\node[rounded corners,
+                 fill=orange!1,draw=orange!30,anchor=base]            
+            	 (base) at ($(current page.east)-(1.75,4)$) [rotate=-0,text width=3cm,align=center] { \footnotesize{\color{red}{
+            	 Complete proof\\
+            	 \faWarning ~ up to $n\geq 4$! ~ \faWarning 
+            	 }}};
+		}		
+	
+	
+	}
+	
+
+\end{frame}
+\note[itemize]{
+	\item Our results can be seen as a tiny step toward  undestanding the analogue of prequantization in the setting of multisymplectic geometry (hence field theory).
+}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+%----------------------------------------------------------------------------------------------------------------------------------
+\end{document}
+%----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+

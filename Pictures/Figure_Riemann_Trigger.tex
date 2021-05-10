@@ -1,0 +1,24 @@
+%+------------------------------------------------------------------------+
+%| Diagram: How to trigger the HCMM costruction in a Riemannian mfd.
+%| Author: Antonio miti
+%+------------------------------------------------------------------------+
+
+
+
+
+\documentclass[border=10pt, tikz]{standalone}
+\usepackage{tikz-cd}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+
+\begin{document}
+\begin{tikzcd}[column sep=large]
+	&	& \Omega^n(M) \ar[dddddd,leftrightarrow,green,bend left=60,"\ast"]\\
+	& \mathfrak{X}(M) \ar[r,red,"\alpha"] \ar[ddddr,blue,"\flat",shift left=1ex]\ar[ddddr,blue,leftarrow,"\sharp"',shift right=1ex]& \Omega^{n-1}(M) \ar[u,"d"']  \ar[dddd,leftrightarrow,green,bend left=60,"\ast"] \\
+	\mathfrak{g} \ar[ru,hookrightarrow,"V_{\cdot}"] \ar[rr,purple,"f_1",crossing over]& & \Omega^{n-2}_{(ham)}(M) \ar[u,"d"']  \ar[dd,leftrightarrow,green,bend left=60,"\ast"]\\
+	\vdots \ar[u,"\partial"]& & \vdots \ar[u,"d"'] \\
+	\bigwedge^{n-3}\mathfrak{g} \ar[u,"\partial"]\ar[rr,purple,"f_{n-3}",crossing over]& & \Omega^2(M) \ar[u,"d"'] \\
+	\bigwedge^{n-2}\mathfrak{g} \ar[u,"\partial"]\ar[rr,purple,"f_{n-2}",crossing over]& & \Omega^1(M) \ar[u,"d"'] \\
+	\bigwedge^{n-1}\mathfrak{g} \ar[u,"\partial"]\ar[rr,purple,"f_{n-1}",crossing over]& & \Omega^0(M) \ar[u,"d"'] 
+\end{tikzcd}
+\end{document}

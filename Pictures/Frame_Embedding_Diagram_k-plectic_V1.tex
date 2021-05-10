@@ -1,0 +1,47 @@
+%+------------------------------------------------------------------------+
+%| Diagram: Kiddo Diagram - k-plectic case
+%| Author: Antonio miti
+%+------------------------------------------------------------------------+
+
+
+\documentclass[beamer,handout]{standalone}
+\usepackage{tikz-cd}
+\usetikzlibrary{cd, fit}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usetikzlibrary{decorations.pathmorphing}
+	%Credit: https://tex.stackexchange.com/questions/99119/beamer-problematic-use-of-visible-and-only-in-combination-with-tikz-to-draw-a
+  \tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt=#1{}{invisible}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+  }
+
+
+\begin{document}
+	\begin{tikzcd}[column sep= small,row sep=small,
+		/tikz/execute at end picture={
+    		\node (large) [rectangle,dashed, draw, fit=(A1) (A2),label=below:{\scriptsize$L_\infty$-algebras cat.}] {};
+  		}]	
+		(M,\omega) 
+		\ar[dr,visible on=<1->,rightsquigarrow,"\text{observables}"]
+		\ar[rrr,visible on=<2->,rightsquigarrow,"\text{twisted standard Vinogradov algebroid}"]
+		& &[4em] &[-3em] 
+		|[visible on=<2->]| (E^n,\rho,\langle\cdot,\cdot\rangle,[\cdot,\cdot]_\omega)
+		\ar[dl,visible on=<3->,rightsquigarrow]
+%
+	\\[1em]
+%
+		& 
+		|[visible on=<1->,alias=A1]| L_{\infty}(M,\omega)
+		\ar[r,visible on=<4->,dashed,hook,line width=0.8pt,color=blue!60!black,"\Psi"]
+		& |[visible on=<3->,alias=A2]| L_{\infty}\big(E^n,\omega\big)
+		&
+ 	\end{tikzcd}	
+
+
+
+\end{document}
+

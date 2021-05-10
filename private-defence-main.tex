@@ -1,0 +1,328 @@
+%+----------------------------------------------------------------------------
+%| SLIDES: Phd Thesis - Private Defence
+%| Contents: - 10 Techincal Slides  
+%|					 (extimated duration 3 minutes per slide )
+%|			 - Backup Slides on technical points			
+%| Author: Antonio miti
+%| Place: Leuven, September 2019
+%+----------------------------------------------------------------------------+
+
+
+%- HandOut Flag -----------------------------------------------------------------------------------------
+\newif\ifHandout
+%	\Handouttrue  %uncomment for the printable version
+
+
+%- D0cum3nt ----------------------------------------------------------------------------------------------
+\ifHandout
+	\documentclass[handout,10pt]{beamer}   
+	\setbeameroption{show notes} %print notes   
+\else
+	\documentclass[10pt]{beamer}
+\fi
+
+
+
+%- Packages ----------------------------------------------------------------------------------------------
+\usepackage{custom-style}
+\usepackage{array}
+\usepackage{pbox}
+
+%--Beamer Style-----------------------------------------------------------------------------------------------
+\usetheme{toninus}
+
+
+
+
+%- T1tle P4g3 -------------------------------------------------------------------------------------------
+\title{Homotopy comomentum maps in Multisymplectic Geometry} 
+\subtitle{\href{https://set.kuleuven.be/phd/sap/prelim}{Preliminary Defence}}
+\author[AMM]{\href{https://dmf.unicatt.it/miti/}{Antonio Michele Miti}}
+\institute[UCSC and KU Leuven]{
+  \begin{tabular}[h]{ccc}
+      Università Cattolica del Sacro Cuore & $\qquad$ & KU Leuven \\
+      Brescia, Italy & & Leuven, Belgium \\
+      \href{https://dipartimenti.unicatt.it/dmf-home?rdeLocaleAttr=it}{\includegraphics[width=3.5cm]{./Logos/UnicattBS-logo}} & & 
+      \href{https://wis.kuleuven.be/english}{\includegraphics[width=4cm]{./Logos/KULeuven_logo}}
+  \end{tabular}      
+}
+\date[PrivateDefence_21] % (optional, should be abbreviation of conference name)
+{	
+	\href{https://set.kuleuven.be/phd/sap/dualjoint/oral}{International Doctoral Programme in Science } \\
+	{\vskip 1ex}
+	February 2, 2021
+}
+
+
+
+
+
+\newcommand{\thankyouslide}[0]{
+	\ifHandout
+
+	\else
+	\addtocounter{framenumber}{-1}
+	\begin{frame}{}
+		\vfill
+	  \centering 
+	  {\Huge\color{red} 
+	  \emph{Thank you for your attention!}}
+		\vfill
+		%
+		\centering
+		\begin{columns}
+			\hfill
+			\begin{column}{0.05\linewidth}
+				\centering \includegraphics{beamericonarticle}
+			\end{column}
+			\begin{column}{0.8\linewidth}
+				\centering
+				\textbf{On some (multi)symplectic aspects of link invariants},
+				\\
+				\emph{AMM, Mauro Spera}, \href{https://arXiv.org/abs/1805.01696}{arxiv:1805.01696};\\
+				(to appear in \emph{Journal of the Australian Mathematical Society})	
+			\end{column}
+			\begin{column}{0.05\linewidth}
+				\centering \includegraphics{beamericonarticle}			
+			\end{column}
+			\hfill
+		\end{columns}
+		\vfill
+		\begin{columns}
+			\hfill
+			\begin{column}{0.05\linewidth}
+				\centering \includegraphics{beamericonarticle}
+			\end{column}
+			\begin{column}{0.8\linewidth}
+				\centering
+				\textbf{Multisymplectic actions of compact Lie groups on spheres},
+				\\
+				\emph{AMM, Leonid Ryvkin}, \href{https://arxiv.org/abs/1906.08790}{arXiv:1906.08790};
+				\\
+				(to appear in \emph{Journal of Symplectic Geometry})
+			\end{column}
+			\begin{column}{0.05\linewidth}
+				\centering \includegraphics{beamericonarticle}			
+			\end{column}
+			\hfill
+		\end{columns}		
+		\vfill		
+		\begin{columns}
+			\hfill
+			\begin{column}{0.05\linewidth}
+				\centering \includegraphics{beamericonarticle}
+			\end{column}
+			\begin{column}{0.8\linewidth}
+				\centering
+		\textbf{Derivation of the HOMFLYPT knot polynomial via helicity and geometric quantization},
+				\\
+		\emph{AMM, Mauro Spera}, \href{https://arxiv.org/abs/1910.13400}{arXiv:1910.13400};\\
+				(to appear in \emph{Bollettino dell'Unione Matematica Italiana})	
+			\end{column}				
+			\begin{column}{0.05\linewidth}
+				\centering \includegraphics{beamericonarticle}			
+			\end{column}
+			\hfill
+		\end{columns}
+		\vfill
+		\begin{columns}
+			\hfill
+			\begin{column}{0.05\linewidth}
+				\centering \includegraphics{beamericonarticle}
+			\end{column}
+			\begin{column}{0.8\linewidth}
+				\centering
+				\textbf{Observables of multisymplectic manifolds and higher Courant algebroids},
+				\\
+				\emph{AMM, Marco Zambon}; % \href{https://arXiv.org/abs/1805.01696}{arxiv:1805.01696};\\
+				(To appear soon on \emph{arxiv})	
+			\end{column}
+			\begin{column}{0.05\linewidth}
+				\centering \includegraphics{beamericonarticle}			
+			\end{column}
+			\hfill
+		\end{columns}
+	\end{frame}
+	\fi
+}
+
+
+
+
+
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+%- D0cum3nt ----------------------------------------------------------------------------------------------------------------------------------
+\begin{document}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}  % Alternative: \maketitle outside of frame
+	\titlepage
+	\ifHandout
+		\tikz[overlay,remember picture]
+		{
+	    	%	\node at ($(current page.west)+(1.5,0)$) [rotate=90] {\Huge\textcolor{gray}{\today}};
+	    	\node[        
+	    		draw,
+	    		shape border rotate=90,
+			isosceles triangle,
+			isosceles triangle apex angle=90,
+			fill=yellow]
+	        		at ($(current page.north east)-(1,1)$) [rotate=-45] {\textcolor{red}{Handout version}};
+		}
+	\fi
+	\end{frame}
+	\addtocounter{framenumber}{-1}
+\note{
+	%Abstract?
+	\textbf{\underline{OUTLINE}}:
+	\tableofcontents
+}
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+\outline
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\subsubsection{Introduction}
+\begin{frame}[fragile]{Multisymplectic geometry in a nutshell}
+	\begin{block}{Historical motivation}
+		Mechanics: geometrical foundations of \textit{(first-order)} field theories.
+	\end{block}
+	\vfill	
+	\begin{table}
+		\only<2>{
+		\begin{tabular}{|p{0.2\textwidth}|p{0.3\textwidth}|p{0.35\textwidth}|} 
+            \hline
+            \parbox[][20pt][c]{0.2\textwidth}{mechanics} & \multicolumn{2}{c|}{geometry} \\
+            \hline
+            \parbox[][20pt][c]{0.2\textwidth}{phase space} & symplectic manifold &  \\[.25em]
+            \parbox[][20pt][c]{0.2\textwidth}{classical \\ observables} & Poisson algebra &  \\[.25em]
+            \parbox[][20pt][c]{0.2\textwidth}{symmetries} &  group actions admitting comoment map &  
+            \\
+            \hline
+  \multicolumn{1}{c}{}
+            &  \multicolumn{1}{@{}c@{}}{$\underbrace{\hspace*{.3\textwidth}}_{\text{point-like particles systems}}$} 
+            &  \multicolumn{1}{@{}c@{}}{}              \\
+		\end{tabular}
+		
+		
+		}
+		\onslide<3->{
+		\begin{tabular}{|p{0.2\textwidth}|p{0.3\textwidth}|p{0.35\textwidth}|} 
+            \hline
+            \parbox[][20pt][c]{0.2\textwidth}{mechanics} & \multicolumn{2}{c|}{geometry} \\
+            \hline
+            \parbox[][20pt][c]{0.2\textwidth}{phase space} & symplectic manifold & multisymplectic manifold \\[.25em]
+            \parbox[][20pt][c]{0.2\textwidth}{classical \\ observables} & Poisson algebra & $L_\infty$-algebra \\[.25em]
+            \parbox[][20pt][c]{0.2\textwidth}{symmetries} &  group actions admitting comoment map & group actions admitting 
+			\tikz[baseline,remember picture]{\node[rounded corners,
+                        fill=orange!10,draw=orange!30,anchor=base]            
+            			(target) {homotopy comomentum map};
+            }
+            \\
+            \hline
+  \multicolumn{1}{c}{}
+            &  \multicolumn{1}{@{}c@{}}{$\underbrace{\hspace*{.3\textwidth}}_{\text{point-like particles systems}}$} 
+            &
+            \multicolumn{1}{@{}c@{}}{$\underbrace{\hspace*{.3\textwidth}}_{\text{field-theoretic systems}}$} 
+               \\
+		\end{tabular}
+		}
+	\end{table}		
+	\vfill
+	\onslide<4->{
+	
+	\begin{block}{Scope of the thesis}
+		\begin{itemize}
+			\item[$\bullet$] Develop theory of 
+				\tikz[baseline,remember picture]{\node[rounded corners,
+                        fill=orange!10,draw=orange!30,anchor=base]            
+            			(base) {homotopy comomentum maps};
+            	}
+            \item[$\bullet$] produce new meaningful examples.
+		\end{itemize}
+	\end{block}
+
+
+                    \begin{tikzpicture}[overlay,remember picture]
+                    \path[->]<4-> (base.north east) edge[bend right](target.south east);
+                    \end{tikzpicture}
+	}
+
+
+\end{frame}
+\note[itemize]{
+	\item Historically, the interest in multisymplectic manifolds, has been motivated by the need for understanding the geometrical foundations of first-order classical field theories.
+	The key point is that, just as one can associate a symplectic manifold to an ordinary classical mechanical system (e.g. a single
+point-like particle constrained to some manifold), it is possible to associate a multisymplectic
+manifold to any classical field system (e.g. a continuous medium like a filament or a fluid). See frame Extra-\ref{Frame:Ms-Field-Mechanics} 
+	
+	\item General ideas basic parallelisms with caveats
+	\item caveat: points in multiphase spaces are not states
+	\item the table hides the duality between geometric and algebraic approaches to the problem.
+	\item 
+}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Background}
+	\checkpoint
+	\input{defence-background}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Foreground}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+	\subsection{Hydrodynamical homotopy moment map and Knots}
+	\subcheckpoint	
+	\input{defence-hydro}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+	\subsection{Multisymplectic compact group actions on spheres}
+	\subcheckpoint	
+	\input{defence-spheres}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+	\subsection{Gauge transformations, higher Courant algebroids and HCMM}
+	\subcheckpoint	
+	\input{defence-gauge}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+\thankyouslide
+
+%------------------------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------------------------
+
+
+
+
+%------------------------------------------------------------------------------------------------
+% APPENDIX
+%------------------------------------------------------------------------------------------------
+\appendix
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Complementary Material}
+	\input{defence-complementary-material}
+	\input{defence-aknowledgements}
+%------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+%------------------------------------------------------------------------------------------------
+\end{document}
+

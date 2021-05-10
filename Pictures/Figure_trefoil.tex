@@ -1,0 +1,21 @@
+%+------------------------------------------------------------------------+
+%| Figure: Ambient Isotopy of trefoil knot
+%| Author: found on google!
+%+------------------------------------------------------------------------+
+\providecommand{\datapath}{.}
+
+
+\documentclass[crop,tikz]{standalone}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+
+
+
+\begin{document}
+	\begin{tikzcd}[column sep= small,row sep=small]
+		\includegraphics[width=50pt]{\datapath/trefoil/trefoil-0.png} \ar[r,Rightarrow,shift left = 25pt] & \includegraphics[width=50pt]{\datapath/trefoil/trefoil-2.png} \ar[d,Rightarrow] \\
+		\includegraphics[width=50pt]{\datapath/trefoil/trefoil-6.png}\ar[d,Rightarrow] & \includegraphics[width=50pt]{\datapath/trefoil/trefoil-4.png}\ar[l,Rightarrow,shift right = 25pt]\\ 	
+		\includegraphics[width=50pt]{\datapath/trefoil/trefoil-8.png}\ar[r,Rightarrow,shift left = 25pt] & \includegraphics[width=50pt]{\datapath/trefoil/trefoil-10.png} \\ 
+	\end{tikzcd}
+\end{document} 
+

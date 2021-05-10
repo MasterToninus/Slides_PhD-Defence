@@ -1,0 +1,78 @@
+
+
+
+
+
+%- HandOut Flag -----------------------------------------------------------------------------------------
+\newif\ifHandout
+%	\Handouttrue  %uncomment for the printable version
+
+%- D0cum3nt ----------------------------------------------------------------------------------------------
+\documentclass[beamer,handout,10pt]{standalone}   
+\ifHandout
+	\setbeameroption{show notes} %print notes   
+\fi
+
+	
+%- Packages ----------------------------------------------------------------------------------------------
+\usepackage{custom-style}
+
+%--Beamer Style-----------------------------------------------------------------------------------------------
+\usetheme{toninus}
+
+
+
+
+
+
+
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+%- D0cum3nt ----------------------------------------------------------------------------------------------------------------------------------
+\begin{document}
+%------------------------------------------------------------------------------------------------
+
+
+\subsection{References}
+
+%------------------------------------------------------------------------------------------------
+% https://en.wikibooks.org/wiki/LaTeX/Bibliographies_with_biblatex_and_biber
+\begin{frame}[t,allowframebreaks]{Extended Bibliography}
+	%\nocite{*}
+	\bibliographystyle{alpha}
+	\bibliography{bibfile}
+\end{frame}
+%------------------------------------------------------------------------------------------------
+
+
+
+%------------------------------------------------------------------------------------------------
+\begin{frame}[t]{Other aknowledgements}
+	\begin{itemize}
+		\item Picture - Pendulum 13
+			\url{https://andrewjobling.com.au/home-1/everything-okay-becasue-pendulum-swings/}
+		\item Picture - Pendulum Phase Space
+			\url{https://iopscience.iop.org/article/10.1088/0143-0807/33/2/231}
+				\item Picture - Continuum deformation
+			\url{https://commons.wikimedia.org/wiki/File:Displacement_of_a_continuum.svg}
+		\item Animation - Reidmester moves
+			\url{http://realworldmath.tumblr.com/post/57577812688/what-the-hell-is-knot-theory-knot-theory-is-one}
+		\item Animation - Bubble rings
+			\url{https://www.facebook.com/Nassim.Haramein.official/videos/596203997519126/}
+		\item Picture - Whithead link 
+			\url{https://en.wikipedia.org/wiki/Whitehead_link}
+		\item Picture - Gauss linking number 
+			\url{https://www.maths.ed.ac.uk/~v1ranick/papers/ricca.pdf}
+		\item Picture - Borromean Rings
+			\url{https://en.wikipedia.org/wiki/Borromean_rings}	
+	\end{itemize}
+\end{frame}
+\note[itemize]{
+	\item
+}
+%------------------------------------------------------------------------------------------------
+
+
+
+%------------------------------------------------------------------------------------------------
+\end{document}
