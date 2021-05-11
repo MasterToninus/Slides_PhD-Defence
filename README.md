@@ -1,30 +1,13 @@
-# PHD Public Defence
-
-
+# PHD Defence
+It has been a two-step procedure: Two talks, a Private defense and a Public defense.
+https://set.kuleuven.be/phd/sap/prelim
 https://set.kuleuven.be/phd/sap/public
 
 
+Handout of the private talk can be found here: 
+https://www.researchgate.net/publication/349338923_Homotopy_comomentum_maps_in_Multisymplectic_Geometry_-_Preliminary_Defence_-International_Doctoral_Programme_in_Science
 
-marco.zambon@kuleuven.be
 
-luc vrancken <luc.vrancken@univ-valenciennes.fr>, 
-Joeri Van der Veken <joeri.vanderveken@kuleuven.be>, 
-Wendy Goemans <wendy.goemans@kuleuven.be>, 
-Alfonso Giuseppe Tortorella <alfonsogiuseppe.tortorella@kuleuven.be>, 
-Joel Villatoro <joel.villatoro@kuleuven.be>, 
-Charlotte Kirchhoff-Lukat <charlotte.kirchhofflukat@kuleuven.be>, 
-Ralph Klaasse <r.l.klaasse@gmail.com>, 
-Francesco Cattafi <francesco.cattafi@kuleuven.be>, 
-Marilena Moruz <marilena.moruz@kuleuven.be>, 
-Víctor Sanmartín-López <victor.sanmartinlopez@kuleuven.be>, 
-caolin19881013@gmail.com <caolin19881013@gmail.com>, 
-Karandeep Singh <karandeep.singh@kuleuven.be>, 
-Stephane Geudens <stephane.geudens@kuleuven.be>, 
-Anne Wijffels <anne.wijffels@kuleuven.be>,
-Marco Usula <marco.usula@kuleuven.be>, 
-Lars Swijsen <lars.swijsen@kuleuven.be>, 
-Kristof Dekimpe <kristof.dekimpe@kuleuven.be>,
-Pol Verstraelen <leopold.verstraelen@kuleuven.be>, 
-afferentidmf@dmf.unicatt.it, 
-assegnistidmf@dmf.unicatt.it, 
-dottorandidmf@dmf.unicatt.it
+The public defense has inspired the following 1-hour long talk:
+https://github.com/MasterToninus/Slides_What-is-GeoMec
+
