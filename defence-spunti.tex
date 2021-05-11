@@ -1,16 +1,24 @@
 %+----------------------------------------------------------------------------+
 %| SLIDES: 
-%| Chapter: Brief introduction to multisymplectic geometry and Homotopy momap
+%| Chapter:Spunti
 %| Author: Antonio miti
 %| Event: PHD preliminary Defence
 %+----------------------------------------------------------------------------+
 
 %- HandOut Flag -----------------------------------------------------------------------------------------
-\newif\ifHandout
+\makeatletter
+\@ifundefined{ifHandout}{%
+  \expandafter\newif\csname ifHandout\endcsname
+}{}
+\makeatother
 
 %- D0cum3nt ----------------------------------------------------------------------------------------------
-\documentclass[beamer,handout,10pt]{standalone}
-	\setbeameroption{show notes}
+\documentclass[beamer,10pt]{standalone}   
+%\documentclass[beamer,10pt,handout]{standalone}  \Handouttrue  
+
+\ifHandout
+	\setbeameroption{show notes} %print notes   
+\fi
 	
 
 
